@@ -41,12 +41,12 @@ public class Carga {
                 } else if(this.peso > outro.peso){
                     return true;
                 } else {
-                    return false
+                    return false;
                 }
             } else if(this.urgencia > outro.getUrgencia){
                 return true;
             } else {
-                return false
+                return false;
             }
         }else if (this.prioridade > outro.getPrioridade()){
             return true;
