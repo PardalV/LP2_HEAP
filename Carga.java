@@ -16,7 +16,7 @@ public class Carga {
     }
 
     public int getPrioridade(){
-        return prioridade
+        return prioridade;
     }
 
     public int getUrgencia(){
@@ -31,19 +31,19 @@ public class Carga {
 
     public boolean eMaiorQue(Carga outro){
         if(this.prioridade == outro.getPrioridade()){
-            if(this.urgencia == outro.getUrgencia){
-                if(this.peso == outro.getPeso){
-                    if(this.id < outro.getId){
+            if(this.urgencia == outro.getUrgencia()){
+                if(this.peso == outro.getPeso()){
+                    if(this.id < outro.getId()){
                         return true;
                     } else {
                         return false;
                     }
-                } else if(this.peso > outro.peso){
+                } else if(this.peso > outro.getPeso()){
                     return true;
                 } else {
                     return false;
                 }
-            } else if(this.urgencia > outro.getUrgencia){
+            } else if(this.urgencia > outro.getUrgencia()){
                 return true;
             } else {
                 return false;
