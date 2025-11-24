@@ -10,7 +10,10 @@ public class HeapMaxima{
     }
 
     public void inserir(Carga novaCarga){
-
+        garantirCapacidade();
+        this.quantidade++;
+        this.heap[this.quantidade] = novaCarga;
+        subir(this.quantidade);
     }
 
     public void removerMaximo(){
@@ -29,7 +32,20 @@ public class HeapMaxima{
     }
 
     public boolean estaVazia(){
-        
+        return this.quantidade == 0;
+    }
+
+    private void subir(int i){
+        int pai = i/2;
+        while(i > 1 && this.heap[i].eMaiorQue(this.heap[pai])){
+            trocar(i, pai);
+            i = pai;
+            pai = i/2;
+        }
+    }
+
+    private void descer(int i){
+
     }
     private void trocar(int i, int j){
         Carga aux = heap[i];
