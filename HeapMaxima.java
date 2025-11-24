@@ -16,8 +16,17 @@ public class HeapMaxima{
         subir(this.quantidade);
     }
 
-    public void removerMaximo(){
-
+    public Carga removerMaximo(){
+        if(this.quantidade == 0){
+            System.out.println("A Heap está vazia, não há o que remover");
+            return null;
+        }
+        Carga raiz = this.heap[1];
+        this.heap[1] = this.heap[this.quantidade];
+        this.heap[this.quantidade] = null;
+        this.quantidade--;
+        descer(1);
+        return raiz;
     }
 
     public Carga consultarTopo(){
@@ -45,7 +54,21 @@ public class HeapMaxima{
     }
 
     private void descer(int i){
-
+        int fiE, fiD, maior;
+        while(2 * i <= this.quantidade){
+            fiE = 2 * i;
+            fiD = 2 * i + 1;
+            maior = fiE;
+            if (fiD <= this.quantidade && this.heap[fiD].eMaiorQue(this.heap[fiE])){
+                maior = fiD;
+            }
+            if(this.heap[maior].eMaiorQue(this.heap[i])){
+                trocar(i, maior);
+                i = maior;
+            } else {
+                break;
+            }
+        }
     }
     private void trocar(int i, int j){
         Carga aux = heap[i];
