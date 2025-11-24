@@ -29,6 +29,13 @@ public class Carga {
         return this.id;
     }
 
+    public int getTipo(){
+        return tipo;
+    }
+    public String getDescricao(){
+        return descricao;
+    }
+
     public boolean eMaiorQue(Carga outro){
         if(this.prioridade == outro.getPrioridade()){
             if(this.urgencia == outro.getUrgencia()){
@@ -53,6 +60,11 @@ public class Carga {
         } else {
             return false;
         }
+    }
+    @Override public String toString(){
+        return "ID: " + id + " | Tipo: " + tipo + " | Urgência: " + urgencia + 
+               " | Peso: " + peso + " | Prioridade: " + prioridade + 
+               " | Descrição: " + descricao;
     }
 
 }
