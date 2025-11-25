@@ -88,7 +88,7 @@ public class HeapMaxima{
     }
     public Carga[] getVetorCopia(){
         Carga[] copia = new Carga[this.quantidade + 1];
-        for(int i = 1; i < this.quantidade; i ++){
+        for(int i = 1; i <= this.quantidade; i ++){
             copia[i] = this.heap[i];
         }
         return copia;
